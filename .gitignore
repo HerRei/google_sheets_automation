@@ -63,3 +63,10 @@ Thumbs.db
 # -----------------------------
 *.sqlite3
 instance/
+# venvs
+venv/
+.venv/
+
+# secrets
+credentials.json
+token.json
