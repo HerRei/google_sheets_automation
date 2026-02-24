@@ -3,7 +3,7 @@
 This was a tool i built for a place i worked for, to autmate the bookkeeping, where logging all of the sheets by hand into an Excel sheet took about 2h twice a week, with this - it was about 30min once a week. 
 
 
-## 🚀 How it works
+## How it works
 The app acts as a bridge between a simple web form and your Google Sheet.
 1. **Store/Tab Selection:** Choose which category (tab) the entry belongs to.
 2. **Data Input:** Enter the date, Abo/Vignette details, and destination.
@@ -11,7 +11,7 @@ The app acts as a bridge between a simple web form and your Google Sheet.
 
 ---
 
-## 🛠 Setup
+## Setup
 
 ### 1. Install Libraries
 Ensure you have Python installed, then run the following command to install the required dependencies:
