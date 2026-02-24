@@ -3,14 +3,6 @@
 This was a tool i built for a a repetitive workflow, to autmate the record keeping, where logging all of the sheets by hand into an spreadsheet sheet took detailsut 2h twice a week, with this - it was detailsut 30min once a week. 
 
 
-## How it works
-The app acts as a bridge between a simple web form and your Google Sheet.
-1. **Entry Type/Tab Selection:** Choose which category (tab) the entry belongs to.
-2. **Data Input:** Enter the date, Details/Option details, and target.
-3. **Automated Logging:** The app finds the next empty row in the selected tab and appends your data instantly.
-
----
-
 ## Setup
 
 ### 1. Install Libraries
