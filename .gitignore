@@ -1,0 +1,65 @@
+# -----------------------------
+# Python / caches
+# -----------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Bytecode / cache folders
+.pytest_cache/
+.coverage
+coverage.xml
+htmlcov/
+.mypy_cache/
+.pyre/
+.ruff_cache/
+
+# -----------------------------
+# Virtual environments
+# -----------------------------
+.venv/
+venv/
+ENV/
+env/
+
+# -----------------------------
+# Secrets / credentials (Google OAuth etc.)
+# -----------------------------
+credentials.json
+token.json
+
+# If you ever use env files
+.env
+.env.*
+*.env
+
+# -----------------------------
+# Build / packaging (PyInstaller, etc.)
+# -----------------------------
+build/
+dist/
+*.spec
+
+# -----------------------------
+# IDEs / editors
+# -----------------------------
+.vscode/
+.idea/
+*.iml
+
+# -----------------------------
+# OS junk
+# -----------------------------
+.DS_Store
+Thumbs.db
+
+# -----------------------------
+# Logs
+# -----------------------------
+*.log
+
+# -----------------------------
+# Optional: local dev artifacts
+# -----------------------------
+*.sqlite3
+instance/
