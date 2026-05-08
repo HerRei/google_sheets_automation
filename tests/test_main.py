@@ -26,7 +26,7 @@ class MockCreds:
 class MockService:
     def __init__(self, rows=None):
         self.rows = rows if rows else []
-        self.calls = []  # Recorded service method calls for assertions
+        self.calls = []
 
     def spreadsheets(self):
         return self
@@ -87,7 +87,6 @@ def test_refreshes_token_if_expired(monkeypatch):
     monkeypatch.setattr(main.Credentials, "from_authorized_user_file", lambda filename, scopes: fake_creds)
     monkeypatch.setattr(main, "build", lambda *args, **kwargs: "built_service")
 
-    
     m_open = mock_open()
     monkeypatch.setattr("builtins.open", m_open)
 

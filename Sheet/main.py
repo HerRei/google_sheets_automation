@@ -20,7 +20,7 @@ DEFAULT_CONFIG = {
     "flask_secret_key": "change-this-local-secret",
     "oauth_credentials_file": "credentials.json",
     "oauth_token_file": "token.json",
-    "entry_types": ["Record Type A", "Record Type B", "Record Type"],
+    "entry_types": ["Record Type A", "Record Type B", "Record Type C"],
     "targets": ["Target A", "Target B", "Target C"],
     "days_back": 14,
     "option_labels": {
@@ -62,6 +62,9 @@ days_back = int(config_data.get("days_back", 14))
 option_labels = config_data.get("option_labels", DEFAULT_CONFIG["option_labels"])
 
 service = None
+
+def sorted_option_items():
+    return sorted(option_labels.items(), key=lambda item: int(item[0]) if item[0].isdigit() else item[0])
 
 # get the google sheet service
 def get_service():
@@ -209,10 +212,12 @@ def details():
     <h2>Record Details</h2>
     <form method='post'>
     <input type='text' name='reference' placeholder='Reference'><br><br>
-    <button class='btn' name='option' value='1'>Option A</button>
-    <button class='btn' name='option' value='2'>Option B</button>
-    </form>
     """
+    for value, label in sorted_option_items():
+        safe_value = escape(str(value))
+        safe_label = escape(str(label))
+        form += "<button class='btn' name='option' value='" + safe_value + "'>" + safe_label + "</button>"
+    form += "</form>"
     return render_template_string(html_header + form + "</body></html>")
 
 @app.route("/target", methods=["GET", "POST"])

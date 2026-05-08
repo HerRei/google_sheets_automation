@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="A small Flask/Python application for writing structured records to Google Sheets."
+      content="A small Flask/Python application for writing structured bookkeeping records to Google Sheets."
     />
     <title>Google Sheets Automation</title>
     <link rel="stylesheet" href="style.css" />
@@ -19,11 +19,12 @@
 
       <section class="hero" aria-labelledby="hero-title">
         <div class="hero-content">
-          <p class="eyebrow">Portfolio case study</p>
-          <h1 id="hero-title">Google Sheets Automation</h1>
+          <p class="eyebrow">Production bookkeeping workflow</p>
+          <h1 id="hero-title">Less repetitive typing. Cleaner spreadsheet records.</h1>
           <p class="subtitle">
-            A small Flask/Python application for writing structured records to
-            Google Sheets without retyping the same details each time.
+            A small Flask/Python application that turns a repeated bookkeeping
+            workflow into a guided input flow and writes structured records to
+            Google Sheets.
           </p>
           <div class="button-group" aria-label="Project links">
             <a
@@ -41,41 +42,96 @@
           </div>
         </div>
 
-        <aside class="sheet-preview" aria-label="Generic structured record preview">
-          <div class="preview-toolbar">
+        <aside class="workflow-panel" aria-label="Generic workflow preview">
+          <div class="panel-header">
             <span></span>
             <span></span>
             <span></span>
           </div>
-          <div class="preview-grid" aria-hidden="true">
-            <div class="preview-cell preview-head">Timestamp</div>
-            <div class="preview-cell preview-head">Record</div>
-            <div class="preview-cell preview-head">Entry Type</div>
-            <div class="preview-cell">Auto</div>
-            <div class="preview-cell">Record Type A</div>
-            <div class="preview-cell">Record A</div>
-            <div class="preview-cell">Auto</div>
-            <div class="preview-cell">Record Type B</div>
-            <div class="preview-cell">Record B</div>
+          <div class="panel-body">
+            <div class="step is-active">
+              <span>1</span>
+              <p>Select record type</p>
+            </div>
+            <div class="step">
+              <span>2</span>
+              <p>Choose date and details</p>
+            </div>
+            <div class="step">
+              <span>3</span>
+              <p>Review structured entry</p>
+            </div>
+            <div class="step">
+              <span>4</span>
+              <p>Append to spreadsheet</p>
+            </div>
           </div>
         </aside>
       </section>
     </header>
 
     <main>
-      <section class="section" aria-labelledby="overview-title">
+      <section class="impact-grid" aria-label="Project impact">
+        <article class="impact-card">
+          <span>01</span>
+          <h2>Used in production</h2>
+          <p>Built for a real recurring workflow, not only as a demo.</p>
+        </article>
+        <article class="impact-card">
+          <span>02</span>
+          <h2>Bookkeeping focused</h2>
+          <p>Designed around repeated structured entries that belong in a sheet.</p>
+        </article>
+        <article class="impact-card">
+          <span>03</span>
+          <h2>Workflow improvement</h2>
+          <p>Helped reduce repetitive manual typing and made the process easier to repeat.</p>
+        </article>
+      </section>
+
+      <section class="section split" aria-labelledby="overview-title">
         <div class="section-heading">
           <p class="eyebrow">Overview</p>
-          <h2 id="overview-title">Automating repetitive data entry</h2>
+          <h2 id="overview-title">A practical tool for repeated record entry</h2>
         </div>
         <div class="section-copy">
           <p>
             This project demonstrates how a lightweight Flask app can collect
             structured input and send it directly to Google Sheets through the
-            Google Sheets API. The primary goal is to save time when similar
-            details need to be entered repeatedly, while keeping the
-            implementation small, testable, and easy to configure.
+            Google Sheets API. It was useful because the workflow did not need a
+            large custom system; it needed a fast, consistent way to enter the
+            same kinds of bookkeeping records again and again.
           </p>
+          <p>
+            The result is small enough to understand quickly, configurable
+            enough to reuse, and focused enough to solve the actual problem
+            without overbuilding.
+          </p>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="why-title">
+        <div class="section-heading">
+          <p class="eyebrow">Why it is useful</p>
+          <h2 id="why-title">A small automation with a clear payoff</h2>
+        </div>
+        <div class="benefit-list">
+          <article>
+            <h3>Less manual repetition</h3>
+            <p>Common values are selected from configurable options instead of typed from scratch.</p>
+          </article>
+          <article>
+            <h3>More consistent records</h3>
+            <p>The guided flow keeps entries structured before they reach the spreadsheet.</p>
+          </article>
+          <article>
+            <h3>Easy local setup</h3>
+            <p>Sheet ids, OAuth files, labels, and options live in local configuration.</p>
+          </article>
+          <article>
+            <h3>Simple to maintain</h3>
+            <p>The stack is intentionally small: Flask routes, Google Sheets API calls, and tests.</p>
+          </article>
         </div>
       </section>
 
@@ -91,23 +147,23 @@
           </article>
           <article class="card">
             <h3>Google Sheets API integration</h3>
-            <p>Writes validated entries to a configured spreadsheet.</p>
+            <p>Appends validated rows to a configured spreadsheet.</p>
           </article>
           <article class="card">
-            <h3>Structured package layout</h3>
-            <p>Keeps application code organized for local development and testing.</p>
+            <h3>Configurable labels</h3>
+            <p>Record types, targets, and option labels are editable locally.</p>
           </article>
           <article class="card">
-            <h3>User Editable Configuration</h3>
-            <p>Sheet ids, OAuth files, labels, and record options are edited locally.</p>
+            <h3>Environment overrides</h3>
+            <p>Important paths and ids can be supplied without changing source code.</p>
           </article>
           <article class="card">
-            <h3>pytest test coverage</h3>
-            <p>Includes automated checks for the core application behavior.</p>
+            <h3>pytest coverage</h3>
+            <p>Core service behavior and the guided form flow are covered by tests.</p>
           </article>
           <article class="card">
-            <h3>Time-Saving Design</h3>
-            <p>Pre-populated buttons for dates, records, and record types reduce typing.</p>
+            <h3>Portfolio-safe demo</h3>
+            <p>The public repository uses placeholders and generic examples only.</p>
           </article>
         </div>
       </section>
@@ -120,21 +176,47 @@
         <ol class="flow" aria-label="Application data flow">
           <li>User Input</li>
           <li>Flask App</li>
-          <li>Validation Layer</li>
+          <li>Record Review</li>
           <li>Google Sheets API</li>
           <li>Spreadsheet</li>
         </ol>
       </section>
 
-      <section class="section privacy" aria-labelledby="privacy-title">
+      <section class="section demo-section" aria-labelledby="demo-title">
         <div class="section-heading">
-          <p class="eyebrow">Privacy</p>
-          <h2 id="privacy-title">Generic showcase data</h2>
+          <p class="eyebrow">Example output</p>
+          <h2 id="demo-title">Generic spreadsheet shape</h2>
+        </div>
+        <div class="sheet-preview" aria-label="Generic spreadsheet preview">
+          <div class="preview-grid" aria-hidden="true">
+            <div class="preview-cell preview-head">Timestamp</div>
+            <div class="preview-cell preview-head">Record Type</div>
+            <div class="preview-cell preview-head">Reference</div>
+            <div class="preview-cell preview-head">Option</div>
+            <div class="preview-cell preview-head">Target</div>
+            <div class="preview-cell">Auto</div>
+            <div class="preview-cell">Record Type A</div>
+            <div class="preview-cell">Record A</div>
+            <div class="preview-cell">Option A</div>
+            <div class="preview-cell">Target A</div>
+            <div class="preview-cell">Auto</div>
+            <div class="preview-cell">Record Type B</div>
+            <div class="preview-cell">Record B</div>
+            <div class="preview-cell">Option B</div>
+            <div class="preview-cell">Target B</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section note" aria-labelledby="notes-title">
+        <div class="section-heading">
+          <p class="eyebrow">Public repo notes</p>
+          <h2 id="notes-title">Configured locally</h2>
         </div>
         <p>
-          This page uses generic examples such as Record Type A, Entry Type, Record
-          A, and Timestamp. Real setup values belong in local configuration files
-          and should not be committed.
+          The public version contains placeholders and generic labels. Real
+          spreadsheet ids, OAuth files, tokens, and workflow-specific labels are
+          kept in local configuration files.
         </p>
       </section>
 
