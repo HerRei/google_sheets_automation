@@ -27,6 +27,8 @@ env/
 # -----------------------------
 credentials.json
 token.json
+client_secret.json
+config.json
 
 # If you ever use env files
 .env
@@ -50,7 +52,7 @@ dist/
 # -----------------------------
 # OS junk
 # -----------------------------
-.DS_Entry Type
+.DS_Store
 Thumbs.db
 
 # -----------------------------
@@ -63,8 +65,3 @@ Thumbs.db
 # -----------------------------
 *.sqlite3
 instance/
-
-venv/
-.venv/
-credentials.json
-token.json

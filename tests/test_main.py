@@ -1,6 +1,5 @@
 import pytest
-import os
-from unittest.mock import mock_open 
+from unittest.mock import mock_open
 from Sheet import main
 
 # This runs before every test to make sure we start fresh
@@ -72,6 +71,7 @@ def test_uses_existing_token_if_valid(monkeypatch):
     fake_creds = MockCreds(valid=True, expired=False)
     
     # Mock os.path.exists
+    monkeypatch.setattr(main, "SHEET_ID", "TEST_SHEET_ID")
     monkeypatch.setattr(main.os.path, "exists", lambda x: True)
     monkeypatch.setattr(main.Credentials, "from_authorized_user_file", lambda filename, scopes: fake_creds)
     monkeypatch.setattr(main, "build", lambda *args, **kwargs: "built_service")
@@ -82,6 +82,7 @@ def test_uses_existing_token_if_valid(monkeypatch):
 def test_refreshes_token_if_expired(monkeypatch):
     fake_creds = MockCreds(valid=False, expired=True)
 
+    monkeypatch.setattr(main, "SHEET_ID", "TEST_SHEET_ID")
     monkeypatch.setattr(main.os.path, "exists", lambda x: True)
     monkeypatch.setattr(main.Credentials, "from_authorized_user_file", lambda filename, scopes: fake_creds)
     monkeypatch.setattr(main, "build", lambda *args, **kwargs: "built_service")
@@ -154,10 +155,10 @@ def test_wizard_flow(client, monkeypatch):
     # 1. Home
     response = client.get("/")
     assert response.status_code == 302
-    assert "/entry_type" in response.headers["Location"]
+    assert "/entry-type" in response.headers["Location"]
 
-    # 2. Entry Type
-    response = client.post("/entry_type", data={"entry_type": "Record Type A"})
+    # 2. Entry type
+    response = client.post("/entry-type", data={"entry_type": "Record Type A"})
     assert response.status_code == 302
     assert "/date" in response.headers["Location"]
 
@@ -187,7 +188,7 @@ def test_restart_button(client):
     response = client.post("/review", data={"action": "restart"})
 
     assert response.status_code == 302
-    # Redirects to "/" then "/entry_type"
+    # Redirects to the beginning of the flow.
     assert "/" in response.headers["Location"]
 
     with client.session_transaction() as sess:

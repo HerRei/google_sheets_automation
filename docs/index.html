@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="A small Flask/Python application for writing structured records to Google Sheets."
+    />
+    <title>Google Sheets Automation</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="index.html">Google Sheets Automation</a>
+        <a class="profile-link" href="https://github.com/HerRei">GitHub Profile</a>
+      </nav>
+
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-content">
+          <p class="eyebrow">Portfolio case study</p>
+          <h1 id="hero-title">Google Sheets Automation</h1>
+          <p class="subtitle">
+            A small Flask/Python application for writing structured records to
+            Google Sheets without retyping the same details each time.
+          </p>
+          <div class="button-group" aria-label="Project links">
+            <a
+              class="button button-primary"
+              href="https://github.com/HerRei/google_sheets_automation"
+            >
+              View Repository
+            </a>
+            <a
+              class="button button-secondary"
+              href="https://github.com/HerRei/google_sheets_automation/blob/main/README.md"
+            >
+              View README
+            </a>
+          </div>
+        </div>
+
+        <aside class="sheet-preview" aria-label="Generic structured record preview">
+          <div class="preview-toolbar">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="preview-grid" aria-hidden="true">
+            <div class="preview-cell preview-head">Timestamp</div>
+            <div class="preview-cell preview-head">Record</div>
+            <div class="preview-cell preview-head">Entry Type</div>
+            <div class="preview-cell">Auto</div>
+            <div class="preview-cell">Record Type A</div>
+            <div class="preview-cell">Record A</div>
+            <div class="preview-cell">Auto</div>
+            <div class="preview-cell">Record Type B</div>
+            <div class="preview-cell">Record B</div>
+          </div>
+        </aside>
+      </section>
+    </header>
+
+    <main>
+      <section class="section" aria-labelledby="overview-title">
+        <div class="section-heading">
+          <p class="eyebrow">Overview</p>
+          <h2 id="overview-title">Automating repetitive data entry</h2>
+        </div>
+        <div class="section-copy">
+          <p>
+            This project demonstrates how a lightweight Flask app can collect
+            structured input and send it directly to Google Sheets through the
+            Google Sheets API. The primary goal is to save time when similar
+            details need to be entered repeatedly, while keeping the
+            implementation small, testable, and easy to configure.
+          </p>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="features-title">
+        <div class="section-heading">
+          <p class="eyebrow">Features</p>
+          <h2 id="features-title">Focused implementation details</h2>
+        </div>
+        <div class="card-grid">
+          <article class="card">
+            <h3>Flask-based input flow</h3>
+            <p>Provides a compact web interface for collecting structured records.</p>
+          </article>
+          <article class="card">
+            <h3>Google Sheets API integration</h3>
+            <p>Writes validated entries to a configured spreadsheet.</p>
+          </article>
+          <article class="card">
+            <h3>Structured package layout</h3>
+            <p>Keeps application code organized for local development and testing.</p>
+          </article>
+          <article class="card">
+            <h3>User Editable Configuration</h3>
+            <p>Sheet ids, OAuth files, labels, and record options are edited locally.</p>
+          </article>
+          <article class="card">
+            <h3>pytest test coverage</h3>
+            <p>Includes automated checks for the core application behavior.</p>
+          </article>
+          <article class="card">
+            <h3>Time-Saving Design</h3>
+            <p>Pre-populated buttons for dates, records, and record types reduce typing.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="architecture-title">
+        <div class="section-heading">
+          <p class="eyebrow">Architecture</p>
+          <h2 id="architecture-title">Simple data flow</h2>
+        </div>
+        <ol class="flow" aria-label="Application data flow">
+          <li>User Input</li>
+          <li>Flask App</li>
+          <li>Validation Layer</li>
+          <li>Google Sheets API</li>
+          <li>Spreadsheet</li>
+        </ol>
+      </section>
+
+      <section class="section privacy" aria-labelledby="privacy-title">
+        <div class="section-heading">
+          <p class="eyebrow">Privacy</p>
+          <h2 id="privacy-title">Generic showcase data</h2>
+        </div>
+        <p>
+          This page uses generic examples such as Record Type A, Entry Type, Record
+          A, and Timestamp. Real setup values belong in local configuration files
+          and should not be committed.
+        </p>
+      </section>
+
+      <section class="section" aria-labelledby="stack-title">
+        <div class="section-heading">
+          <p class="eyebrow">Tech stack</p>
+          <h2 id="stack-title">Tools used</h2>
+        </div>
+        <ul class="pills" aria-label="Technology stack">
+          <li>Python</li>
+          <li>Flask</li>
+          <li>Google Sheets API</li>
+          <li>pytest</li>
+          <li>HTML</li>
+          <li>CSS</li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>Built as a small portfolio case study.</p>
+      <a href="https://github.com/HerRei">GitHub Profile</a>
+    </footer>
+  </body>
+</html>

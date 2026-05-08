@@ -1,0 +1,21 @@
+{
+  "sheet_id": "YOUR_GOOGLE_SHEET_ID",
+  "flask_secret_key": "change-this-local-secret",
+  "oauth_credentials_file": "credentials.json",
+  "oauth_token_file": "token.json",
+  "entry_types": [
+    "Record Type A",
+    "Record Type B",
+    "Record Type"
+  ],
+  "targets": [
+    "Target A",
+    "Target B",
+    "Target C"
+  ],
+  "days_back": 14,
+  "option_labels": {
+    "1": "Option A",
+    "2": "Option B"
+  }
+}
